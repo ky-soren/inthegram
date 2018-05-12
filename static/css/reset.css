@@ -1,0 +1,22 @@
+body, html, h1, h2, h3, h4, h5, h6, p, span, header, div, aside, article,
+main, content, ul, li, ol, form {
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  list-style: none;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  font-size: 16px;
+  padding: 10px;
+}

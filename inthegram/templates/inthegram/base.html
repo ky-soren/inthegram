@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static "css/reset.css" %}">
+  <link rel="stylesheet" href="{% static "css/base.css" %}">
+  <link rel="icon" href="{% static "img/favicon.ico" %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600" rel="stylesheet">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>In The Gram</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <a href="{% url 'index' %}"><i class="fab fa-instagram" style="font-size: 35px"></i></a>
+      </div>
+      <div class="header-right">
+        {% block dialog %} {% endblock %}
+        <a href="{% url 'logout' %}"><svg id="i-signout" viewBox="0 0 30 28" width="23" height="23" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+              <path d="M28 16 L8 16 M20 8 L28 16 20 24 M11 28 L3 28 3 4 11 4" />
+            </svg>
+          </a>
+      </div>
+    </div>
+  </header>
+  {% block body %} {% endblock %}
+</body>
+<script type="text/javascript" src="{% static "js/base.js" %}"></script>
+
+</html>

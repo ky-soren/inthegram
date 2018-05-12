@@ -1,0 +1,23 @@
+{% extends "inthegram/base.html" %}
+
+{% block body %}
+
+{% if message %}
+<div class="login-message">
+  {{ message }}
+</div>
+{% endif %}
+
+<section>
+  <div class="login-div">
+    <form action="{% url 'login' %}" method="post" class="login-form">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="Username" class="login-username" required>
+      <input type="password" name="password" placeholder="Password" class="login-password" required>
+      <input type="submit" value="Login" class="login-submit">
+    </form>
+
+    <a href="{% url 'register' %}" class="register-link">Register an account here</a>
+  </div>
+</section>
+{% endblock %}

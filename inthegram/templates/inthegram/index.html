@@ -1,0 +1,38 @@
+{% extends "inthegram/base.html" %}
+
+{% block dialog %}
+<!-- Icon that will display the modal upon being clicked -->
+<svg id="i-compose" viewBox="0 0 32 32" width="25" height="25" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" style="margin-right:20px; cursor:pointer">
+    <path d="M27 15 L27 30 2 30 2 5 17 5 M30 6 L26 2 9 19 7 25 13 23 Z M22 6 L26 10 Z M9 19 L13 23 Z" />
+</svg>
+
+<!-- invisible username -->
+<input type="hidden" id="currentUserId" value="{{ user.id }}">
+<input type="hidden" id="currentUsername" value="{{ user.username }}">
+<!-- Dialog box for making a post -->
+<div id="postDialog" class="post-modal-background">
+  <div class="post-modal">
+    <form method="dialog" class="modal-form">
+      <section>
+        <label class="label" for="postSubmitImage">Choose image to upload</label>
+        <input id="postSubmitImage" type="file" name="imageLink" accept=".jpg,.jpeg" required>
+      </section>
+      <section>
+        <input id="postSubmitCaption" type="text" name="imageCaption" placeholder="Add a caption..." class="modal-caption" required>
+      </section>
+      <menu>
+        <button id="cancel" type="reset" name="button" class="modal-cancel">Cancel</button>
+        <button id="postSubmit" type="reset" class="modal-post">Post</button>
+      </menu>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<section class="post-background">
+  <div id=postList>
+
+  </div>
+</section>
+{% endblock %}
