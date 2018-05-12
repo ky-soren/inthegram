@@ -5,7 +5,7 @@ My attempt at cloning Instagram. Supports user creation, image upload, comments,
 To install neccessary packages run 
 ``` pip install -r requirements.txt ```
 
-In the views.py file commented line 74 must be configured to your S3-bucket./
+In the views.py file commented line 74 must be configured to your S3-bucket.
 On commented line 79 of the same file, you must configure "your-url-here" to fit to your url as given by AWS.
 
 After configuring the User, Access Key ID, and Secret Access Key for AWS S3, you can then run the server with ```python manage.py runserver```
